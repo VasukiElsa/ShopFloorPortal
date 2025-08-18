@@ -1,0 +1,24 @@
+<mvc:View
+  controllerName="Shoor_Floor.controller.Login"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns="sap.m">
+  <Page title="Shop Floor Login Page" showHeader="true">
+    <VBox alignItems="Center" justifyContent="Center" class="sapUiSmallMarginTop">
+      <Input
+        id="empIdInput"
+        placeholder="Employee ID"
+        width="200px"
+        class="sapUiSmallMarginBottom"/>
+      <Input
+        id="empPasswordInput"
+        placeholder="Password"
+        type="Password"
+        width="200px"
+        class="sapUiSmallMarginBottom"/>
+      <Button
+        text="Login"
+        press="onLoginPress"
+        type="Accept"/>
+    </VBox>
+  </Page>
+</mvc:View>

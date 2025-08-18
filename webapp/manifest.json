@@ -1,0 +1,167 @@
+{
+	"_version": "1.7.0",
+	"sap.app": {
+		"id": "Shoor_Floor",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponent",
+			"version": "0.0.0"
+		},
+		"dataSources": {
+			"Z_SHOPFLOOR_SRV": {
+				"uri": "/SAP_Gateway/sap/opu/odata/SAP/Z_SHOPFLOOR_SRV/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+		]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "Shoor_Floor.view.Login",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {},
+				"sap.ushell": {},
+				"sap.collaboration": {},
+				"sap.ui.comp": {},
+				"sap.uxap": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultBindingMode": "TwoWay",
+					"defaultCountMode": "None",
+					"useBatch": false
+				},
+				"dataSource": "Z_SHOPFLOOR_SRV"
+			},
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "Shoor_Floor.i18n.i18n"
+				}
+			}
+		},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "Shoor_Floor.view",
+				"controlId": "app",
+				"controlAggregation": "pages",
+				"bypassed": {
+					"target": "login"
+				}
+			},
+			"routes": [{
+				"pattern": "",
+				"name": "login",
+				"target": "login"
+			}, {
+				"pattern": "main",
+				"name": "main",
+				"target": "main"
+			}, {
+				"pattern": "productionOrders",
+				"name": "productionOrders",
+				"target": "productionOrders"
+			}, {
+				"pattern": "productionOrdersMonth",
+				"name": "productionOrdersMonth",
+				"target": "productionOrdersMonth"
+			}, {
+				"pattern": "plannedOrdersMonth",
+				"name": "plannedOrdersMonth",
+				"target": "plannedOrdersMonth"
+			}, {
+				"pattern": "plannedOrders",
+				"name": "plannedOrders",
+				"target": "plannedOrders"
+			}],
+			"targets": {
+				"login": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": true,
+					"viewName": "Login"
+				},
+				"main": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": true,
+					"viewName": "Main"
+				},
+				"productionOrders": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": true,
+					"viewName": "ProductionOrders"
+				},
+				"productionOrdersMonth": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": true,
+					"viewName": "ProductionOrdersMonth"
+				},
+				"plannedOrdersMonth": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": true,
+					"viewName": "PlannedOrdersMonth"
+				},
+				"plannedOrders": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": true,
+					"viewName": "PlannedOrders"
+				}
+
+			}
+		}
+	}
+}

@@ -1,0 +1,105 @@
+<mvc:View
+    controllerName="Shoor_Floor.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout">
+
+    <Page title="Dashboard" showHeader="true">
+        <customHeader>
+            <Bar>
+                <contentLeft>
+                    <Title text="Dashboard" />
+                </contentLeft>
+                <contentRight>
+                    <Button
+                        id="logoutButton"
+                        text="Logout"
+                        press="onLogoutPress"
+                        type="Reject" />
+                </contentRight>
+            </Bar>
+        </customHeader>
+
+        <l:Grid
+            defaultSpan="L6 M6 S12"
+            class="sapUiResponsiveMargin">
+            <GenericTile
+                header="Production Order By Month"
+                sub-header="Monthly Production Data"
+                press="onTilePress"
+                frameType="TwoByOne">
+                <tileContent>
+                    <TileContent>
+                        <content>
+                            <NumericContent
+                                icon="sap-icon://line-chart"
+                                value="250"
+                                scale="K"
+                                valueColor="Good"
+                                indicator="Up"
+                                footer="As of last month"/>
+                        </content>
+                    </TileContent>
+                </tileContent>
+            </GenericTile>
+
+            <GenericTile
+                header="Production Order By Year"
+                sub-header="Yearly Production Data"
+                press="onTilePress"
+                frameType="TwoByOne">
+                <tileContent>
+                    <TileContent>
+                        <content>
+                            <NumericContent
+                                icon="sap-icon://line-chart"
+                                value="2.5"
+                                scale="M"
+                                valueColor="Good"
+                                indicator="Up"
+                                footer="As of last year"/>
+                        </content>
+                    </TileContent>
+                </tileContent>
+            </GenericTile>
+
+            <GenericTile
+                header="Planned Order By Month"
+                sub-header="Monthly Planned Data"
+                press="onTilePress"
+                frameType="TwoByOne">
+                <tileContent>
+                    <TileContent>
+                        <content>
+                            <NumericContent
+                                icon="sap-icon://bar-chart"
+                                value="300"
+                                scale="K"
+                                valueColor="Neutral"
+                                footer="As of last month"/>
+                        </content>
+                    </TileContent>
+                </tileContent>
+            </GenericTile>
+
+            <GenericTile
+                header="Planned Order By Year"
+                sub-header="Yearly Planned Data"
+                press="onTilePress"
+                frameType="TwoByOne">
+                <tileContent>
+                    <TileContent>
+                        <content>
+                            <NumericContent
+                                icon="sap-icon://bar-chart"
+                                value="3.1"
+                                scale="M"
+                                valueColor="Neutral"
+                                footer="As of last year"/>
+                        </content>
+                    </TileContent>
+                </tileContent>
+            </GenericTile>
+        </l:Grid>
+    </Page>
+</mvc:View>

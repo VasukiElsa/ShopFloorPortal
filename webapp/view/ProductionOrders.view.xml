@@ -1,0 +1,42 @@
+<mvc:View controllerName="Shoor_Floor.controller.ProductionOrders" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+	<Page title="Production Orders - Yearly">
+		<content>
+			<VBox class="sapUiSmallMargin">
+				<!-- Input field for Year -->
+				<HBox>
+					<Label text="Enter Year:" class="sapUiSmallMarginEnd"/>
+					<Input id="yearInput" width="150px" placeholder="e.g. 2025" submit="onYearSubmit"/>
+					<Button text="Load" press="onYearSubmit"/>
+				</HBox>
+				<!-- Table for Production Orders -->
+				<Table id="productionTable" inset="false" growing="true" growingScrollToLoad="true">
+					<headerToolbar>
+						<Toolbar>
+							<Title text="Production Orders (Yearly)"/>
+						</Toolbar>
+					</headerToolbar>
+					<columns>
+						<Column><Text text="Order ID"/></Column>
+						<Column><Text text="Material"/></Column>
+						<Column><Text text="Plant"/></Column>
+						<Column><Text text="Quantity"/></Column>
+						<Column><Text text="Unit"/></Column>
+						<Column><Text text="Date"/></Column>
+					</columns>
+					<items>
+						<ColumnListItem>
+							<cells>
+								<Text text="{path: 'Orderid', formatter: '.Formatter.defaultNA'}"/>
+								<Text text="{path: 'Material', formatter: '.Formatter.defaultNA'}"/>
+								<Text text="{path: 'Plant', formatter: '.Formatter.defaultNA'}"/>
+								<Text text="{path: 'Quantity', formatter: '.Formatter.defaultNA'}"/>
+								<Text text="{path: 'Unit', formatter: '.Formatter.defaultNA'}"/>
+								<Text text="{path: 'Orderdate', formatter: '.Formatter.formatDate'}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</VBox>
+		</content>
+	</Page>
+</mvc:View>

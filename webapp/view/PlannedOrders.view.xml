@@ -1,0 +1,49 @@
+<mvc:View controllerName="Shoor_Floor.controller.PlannedOrders"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page title="Planned Orders - Yearly">
+        <content>
+            <VBox class="sapUiSmallMargin">
+                <!-- Input field for Year -->
+                <HBox>
+                    <Label text="Enter Year:" class="sapUiSmallMarginEnd"/>
+                    <Input id="plannedYearInput" width="150px" placeholder="e.g. 2025" submit="onYearSubmit"/>
+                    <Button text="Load" press="onYearSubmit"/>
+                </HBox>
+
+                <!-- Table for Planned Orders -->
+                <Table id="plannedTable" inset="false" growing="true" growingScrollToLoad="true">
+                    <headerToolbar>
+                        <Toolbar>
+                            <Title text="Planned Orders (Yearly)"/>
+                        </Toolbar>
+                    </headerToolbar>
+                    <columns>
+                        <Column><Text text="Plan Order ID"/></Column>
+                        <Column><Text text="Material"/></Column>
+                        <Column><Text text="Plant"/></Column>
+                        <Column><Text text="Quantity"/></Column>
+                        <Column><Text text="Unit"/></Column>
+                        <Column><Text text="Planned Date"/></Column>
+                        <Column><Text text="Month"/></Column>
+                        <Column><Text text="Year"/></Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem>
+                            <cells>
+                                <Text text="{path: 'PlanOrderId', formatter: '.Formatter.defaultNA'}"/>
+                                <Text text="{path: 'MaterialNo', formatter: '.Formatter.defaultNA'}"/>
+                                <Text text="{path: 'PlantNo', formatter: '.Formatter.defaultNA'}"/>
+                                <Text text="{path: 'Quantity', formatter: '.Formatter.defaultNA'}"/>
+                                <Text text="{path: 'Unit', formatter: '.Formatter.defaultNA'}"/>
+                                <Text text="{path: 'PlannedDate', formatter: '.Formatter.formatDate'}"/>
+                                <Text text="{path: 'PlannedMonth', formatter: '.Formatter.defaultNA'}"/>
+                                <Text text="{path: 'PlannedYear', formatter: '.Formatter.defaultNA'}"/>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>
