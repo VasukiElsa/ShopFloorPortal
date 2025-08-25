@@ -1,24 +1,64 @@
 <mvc:View
   controllerName="Shoor_Floor.controller.Login"
   xmlns:mvc="sap.ui.core.mvc"
-  xmlns="sap.m">
-  <Page title="Shop Floor Login Page" showHeader="true">
-    <VBox alignItems="Center" justifyContent="Center" class="sapUiSmallMarginTop">
-      <Input
-        id="empIdInput"
-        placeholder="Employee ID"
-        width="200px"
-        class="sapUiSmallMarginBottom"/>
-      <Input
-        id="empPasswordInput"
-        placeholder="Password"
-        type="Password"
-        width="200px"
-        class="sapUiSmallMarginBottom"/>
-      <Button
-        text="Login"
-        press="onLoginPress"
-        type="Accept"/>
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  displayBlock="true">
+  <Page
+    showHeader="false"
+    class="sapUiResponsiveContentPadding loginPageBackground">
+
+    <VBox
+      alignItems="Center"
+      justifyContent="Center"
+      height="100%"
+      class="loginContainer">
+
+      <Panel
+        width="auto"
+        class="sapUiResponsiveMargin loginCard">
+        <VBox alignItems="Center">
+          <core:Icon
+            src="sap-icon://factory"
+            size="3rem"
+            color="#005792"
+            class="sapUiSmallMarginBottom" />
+
+          <Title
+            text="Shop Floor Login"
+            level="H1"
+            class="sapUiSmallMarginBottom" />
+
+          <Input
+            id="empIdInput"
+            placeholder="Employee ID"
+            width="100%"
+            class="sapUiSmallMarginBottom">
+            <customData>
+              <core:CustomData key="icon" value="sap-icon://person-placeholder" />
+            </customData>
+          </Input>
+
+          <Input
+            id="empPasswordInput"
+            placeholder="Password"
+            type="Password"
+            width="100%"
+            class="sapUiSmallMarginBottom">
+            <customData>
+              <core:CustomData key="icon" value="sap-icon://key" />
+            </customData>
+          </Input>
+
+          <Button
+            text="Login"
+            press="onLoginPress"
+            type="Accept"
+            width="100%"
+            class="sapUiSmallMarginTop" />
+            
+        </VBox>
+      </Panel>
     </VBox>
   </Page>
 </mvc:View>

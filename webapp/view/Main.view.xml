@@ -2,104 +2,104 @@
     controllerName="Shoor_Floor.controller.Main"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
-    xmlns:l="sap.ui.layout">
+    xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+    displayBlock="true">
 
-    <Page title="Dashboard" showHeader="true">
+    <Page
+        title="Shop Floor Dashboard"
+        class="sapUiResponsiveContentPadding dashboardPageBackground">
         <customHeader>
-            <Bar>
+            <Bar class="dashboardHeader">
                 <contentLeft>
-                    <Title text="Dashboard" />
+                    <Title text="Shop Floor Dashboard" class="dashboardTitle" />
                 </contentLeft>
                 <contentRight>
                     <Button
                         id="logoutButton"
                         text="Logout"
                         press="onLogoutPress"
+                        icon="sap-icon://log"
                         type="Reject" />
                 </contentRight>
             </Bar>
         </customHeader>
 
-        <l:Grid
-            defaultSpan="L6 M6 S12"
-            class="sapUiResponsiveMargin">
-            <GenericTile
-                header="Production Order By Month"
-                sub-header="Monthly Production Data"
-                press="onTilePress"
-                frameType="TwoByOne">
-                <tileContent>
-                    <TileContent>
-                        <content>
-                            <NumericContent
-                                icon="sap-icon://line-chart"
-                                value="250"
-                                scale="K"
-                                valueColor="Good"
-                                indicator="Up"
-                                footer="As of last month"/>
-                        </content>
-                    </TileContent>
-                </tileContent>
-            </GenericTile>
+        <content>
+            <l:Grid
+                defaultSpan="L3 M6 S12"
+                hSpacing="2"
+                vSpacing="2"
+                class="sapUiMediumMarginTop">
 
-            <GenericTile
-                header="Production Order By Year"
-                sub-header="Yearly Production Data"
-                press="onTilePress"
-                frameType="TwoByOne">
-                <tileContent>
-                    <TileContent>
-                        <content>
-                            <NumericContent
-                                icon="sap-icon://line-chart"
-                                value="2.5"
-                                scale="M"
-                                valueColor="Good"
-                                indicator="Up"
-                                footer="As of last year"/>
-                        </content>
-                    </TileContent>
-                </tileContent>
-            </GenericTile>
+                <GenericTile
+                    header="Production Order By Month"
+                    press="onTilePress"
+                    frameType="OneByOne"
+                    class="tileShadow">
+                    <tileContent>
+                        <TileContent>
+                            <content>
+                                <VBox justifyContent="Center" alignItems="Center">
+                                    <core:Icon src="sap-icon://factory" size="2.5rem" color="Default" class="sapUiTinyMarginBottom darkIcon"/>
+                                    <Text text="Monthly production targets are on track." class="sapUiTinyMarginTop sapMText-Bold sapMText-Text darkText"/>
+                                </VBox>
+                            </content>
+                        </TileContent>
+                    </tileContent>
+                </GenericTile>
 
-            <GenericTile
-                header="Planned Order By Month"
-                sub-header="Monthly Planned Data"
-                press="onTilePress"
-                frameType="TwoByOne">
-                <tileContent>
-                    <TileContent>
-                        <content>
-                            <NumericContent
-                                icon="sap-icon://bar-chart"
-                                value="300"
-                                scale="K"
-                                valueColor="Neutral"
-                                footer="As of last month"/>
-                        </content>
-                    </TileContent>
-                </tileContent>
-            </GenericTile>
+                <GenericTile
+                    header="Production Order By Year"
+                    press="onTilePress"
+                    frameType="OneByOne"
+                    class="tileShadow">
+                    <tileContent>
+                        <TileContent>
+                            <content>
+                                <VBox justifyContent="Center" alignItems="Center">
+                                    <core:Icon src="sap-icon://line-chart" size="2.5rem" color="Good" class="sapUiTinyMarginBottom darkIcon"/>
+                                    <Text text="Consistent year-over-year growth." class="sapUiTinyMarginTop sapMText-Bold sapMText-Text darkText"/>
+                                </VBox>
+                            </content>
+                        </TileContent>
+                    </tileContent>
+                </GenericTile>
 
-            <GenericTile
-                header="Planned Order By Year"
-                sub-header="Yearly Planned Data"
-                press="onTilePress"
-                frameType="TwoByOne">
-                <tileContent>
-                    <TileContent>
-                        <content>
-                            <NumericContent
-                                icon="sap-icon://bar-chart"
-                                value="3.1"
-                                scale="M"
-                                valueColor="Neutral"
-                                footer="As of last year"/>
-                        </content>
-                    </TileContent>
-                </tileContent>
-            </GenericTile>
-        </l:Grid>
+                <GenericTile
+                    header="Planned Order By Month"
+                    press="onTilePress"
+                    frameType="OneByOne"
+                    class="tileShadow">
+                    <tileContent>
+                        <TileContent>
+                            <content>
+                                <VBox justifyContent="Center" alignItems="Center">
+                                    <core:Icon src="sap-icon://task" size="2.5rem" color="Neutral" class="sapUiTinyMarginBottom darkIcon"/>
+                                    <Text text="All planned orders for the month are active." class="sapUiTinyMarginTop sapMText-Bold sapMText-Text darkText"/>
+                                </VBox>
+                            </content>
+                        </TileContent>
+                    </tileContent>
+                </GenericTile>
+
+                <GenericTile
+                    header="Planned Order By Year"
+                    press="onTilePress"
+                    frameType="OneByOne"
+                    class="tileShadow">
+                    <tileContent>
+                        <TileContent>
+                            <content>
+                                <VBox justifyContent="Center" alignItems="Center">
+                                    <core:Icon src="sap-icon://calendar" size="2.5rem" color="Neutral" class="sapUiTinyMarginBottom darkIcon"/>
+                                    <Text text="Yearly planning is proceeding as scheduled." class="sapUiTinyMarginTop sapMText-Bold sapMText-Text darkText"/>
+                                </VBox>
+                            </content>
+                        </TileContent>
+                    </tileContent>
+                </GenericTile>
+            </l:Grid>
+        </content>
     </Page>
 </mvc:View>

@@ -1,1 +1,89 @@
-/* Enter your custom styles here */
+.loginPageBackground {
+  background: linear-gradient(to bottom right, #e0e0e0, #ffffff);
+}
+
+.loginContainer {
+  height: 100vh; /* Use full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginCard {
+  width: 350px; /* Fixed width for the card */
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: white;
+}
+
+/* Enhances the input fields with icons */
+.loginCard .sapMInputBaseInner {
+  padding-left: 2.5rem; /* Make space for the icon */
+}
+
+/* Style for the 'Login' button */
+.loginCard .sapMBtn.sapMBtnAccept > .sapMBtnInner {
+  background-color: #005792;
+  color: white;
+  border-color: #005792;
+  font-weight: bold;
+}
+
+/* Hover effect for the button */
+.loginCard .sapMBtn.sapMBtnAccept:hover > .sapMBtnInner {
+  background-color: #003d66;
+  border-color: #003d66;
+}
+
+
+
+.dashboardPageBackground {
+    background-color: #f0f2f5;
+}
+
+.sapUiPage > .sapMBar-Header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.sapUiPage > .sapMBar-Header .sapMTitle {
+    font-weight: bold;
+    color: #333;
+}
+
+.tileShadow {
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.2s ease-in-out;
+    min-height: 250px;   /* increase tile height */
+    min-width: 250px;    /* increase tile width */
+    padding: 1.6rem; 
+}
+
+
+
+
+.tileShadow:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+
+
+.dashboardHeader {
+    background-color: #005792;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dashboardHeader .dashboardTitle {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #000000;
+    align-items : center;
+}
+
+.dashboardHeader .sapMBtn .sapMBtnDefault {
+    color: #ffffff;
+}
